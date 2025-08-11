@@ -1,0 +1,20 @@
+# Ignorar dependencias de Node
+system-monitor-frontend/node_modules/
+system-monitor-frontend/.angular/cache/
+npm-debug.log
+yarn-error.log
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos del editor de código
+.vscode/launch.json
+
+# Ignorar binarios y ejecutables de Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+system-monitor-backend/system-monitor-backend

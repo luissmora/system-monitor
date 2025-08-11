@@ -1,0 +1,33 @@
+<div style="padding: 20px;">
+  <h1>System Monitor Dashboard</h1>
+
+  <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+    <h2>CPU Usage</h2>
+    <p><strong>Usage:</strong> {{ cpuUsage | number:'1.2-2' }}%</p>
+  </div>
+
+  <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+    <h2>Memory Usage</h2>
+    <p><strong>Total:</strong> {{ memoryUsage?.total / (1024 * 1024 * 1024) | number:'1.2-2' }} GB</p>
+    <p><strong>Used:</strong> {{ memoryUsage?.used / (1024 * 1024 * 1024) | number:'1.2-2' }} GB</p>
+    <p><strong>Free:</strong> {{ memoryUsage?.free / (1024 * 1024 * 1024) | number:'1.2-2' }} GB</p>
+    <p><strong>Used Percent:</strong> {{ memoryUsage?.used_percent | number:'1.2-2' }}%</p>
+  </div>
+
+  <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+    <h2>Network Usage</h2>
+    <p><strong>Bytes Sent:</strong> {{ networkUsage?.bytes_sent / (1024 * 1024) | number:'1.2-2' }} MB</p>
+    <p><strong>Bytes Received:</strong> {{ networkUsage?.bytes_recv / (1024 * 1024) | number:'1.2-2' }} MB</p>
+  </div>
+
+  <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+    <h2>Disk Usage</h2>
+    <div *ngFor="let disk of diskUsage" style="margin-bottom: 10px; border: 1px solid #eee; padding: 10px; border-radius: 5px;">
+      <p><strong>Path:</strong> {{ disk.path }}</p>
+      <p><strong>Total:</strong> {{ disk.total / (1024 * 1024 * 1024) | number:'1.2-2' }} GB</p>
+      <p><strong>Used:</strong> {{ disk.used / (1024 * 1024 * 1024) | number:'1.2-2' }} GB</p>
+      <p><strong>Free:</strong> {{ disk.free / (1024 * 1024 * 1024) | number:'1.2-2' }} GB</p>
+      <p><strong>Used Percent:</strong> {{ disk.used_percent | number:'1.2-2' }}%</p>
+    </div>
+  </div>
+</div>
