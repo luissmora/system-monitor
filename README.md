@@ -65,3 +65,4 @@ La aplicación web estará disponible en `http://localhost:4200`.
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un "issue" para discutir cambios importantes o envía un "pull request" con tus mejoras.
+##
